@@ -5,4 +5,5 @@ The android app is very simple. It allows user sign in, and has a button to acti
 
 # TODO
 
+- Implement add device
 - Implement 'sign out'
