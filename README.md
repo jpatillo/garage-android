@@ -10,5 +10,4 @@ Currently, the first time the app is run, tapping the image icon will start the 
 # TODO
 
 - Implement add device
-- Implement 'sign out'
-- Add sign in screen
+- Theme and assets
