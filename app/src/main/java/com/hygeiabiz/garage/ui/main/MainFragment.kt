@@ -132,17 +132,24 @@ class MainFragment : Fragment(),View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.profile_image -> {
-                // Choose authentication providers
-                val providers = arrayListOf(
-                    AuthUI.IdpConfig.GoogleBuilder().build())
 
-                // Create and launch sign-in intent
-                startActivityForResult(
-                    AuthUI.getInstance()
-                        .createSignInIntentBuilder()
-                        .setAvailableProviders(providers)
-                        .build(),
-                    _rcSIGNIN)
+                if(firebaseAuth.currentUser==null) {
+                    // Choose authentication providers
+                    val providers = arrayListOf(
+                        AuthUI.IdpConfig.GoogleBuilder().build()
+                    )
+
+                    // Create and launch sign-in intent
+                    startActivityForResult(
+                        AuthUI.getInstance()
+                            .createSignInIntentBuilder()
+                            .setAvailableProviders(providers)
+                            .build(),
+                        _rcSIGNIN
+                    )
+                } else {
+                    firebaseAuth.signOut()
+                }
             }
             R.id.message -> {
 
