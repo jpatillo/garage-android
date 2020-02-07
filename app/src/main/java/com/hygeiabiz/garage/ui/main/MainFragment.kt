@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
@@ -49,6 +50,7 @@ class MainFragment : Fragment(),View.OnClickListener {
         val view: View = inflater.inflate(R.layout.main_fragment, container, false)
         val btn: Button = view.findViewById(R.id.message)
         val imageView: CircleImageView = view.findViewById(R.id.profile_image)
+        val greetingView: TextView = view.findViewById(R.id.greeting)
         btn.setOnClickListener(this)
         imageView.setOnClickListener(this)
 
@@ -58,11 +60,14 @@ class MainFragment : Fragment(),View.OnClickListener {
                     .load(it.currentUser?.photoUrl.toString())
                     .into(imageView)
 
+                greetingView.text = "Hello ${it.currentUser?.displayName}"
 
                 getUserToken()
             }
             else {
                 token = ""
+                greetingView.text = getString(R.string.greeting_text)
+                imageView.setImageResource(R.mipmap.ic_launcher)
             }
 
         }

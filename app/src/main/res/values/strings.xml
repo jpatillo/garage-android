@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Garage</string>
     <string name="door_button">Activate Door</string>
+    <string name="greeting_text">Click the circle to sign in.</string>
 </resources>

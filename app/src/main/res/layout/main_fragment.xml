@@ -12,25 +12,34 @@
         android:layout_width="137dp"
         android:layout_height="137dp"
 
+        android:layout_marginTop="100dp"
         android:src="@mipmap/ic_launcher_round"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.243" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/greeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/greeting_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
     <Button
         android:id="@+id/message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="@string/door_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintTop_toBottomOf="@+id/greeting" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
