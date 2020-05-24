@@ -161,7 +161,7 @@ class MainFragment : Fragment(),View.OnClickListener {
                 if(token=="")return
 
                 val queue = Volley.newRequestQueue(this.context)
-                val url = "https://garage.jamespatillo.com/garage/${device}/door?u=${firebaseAuth.currentUser?.uid}"
+                val url = "http://96.126.104.125:3010/garage/${device}/door?u=${firebaseAuth.currentUser?.uid}"
 
                 // Request a string response from the provided URL.
                 val stringRequest = object: StringRequest(
@@ -174,6 +174,7 @@ class MainFragment : Fragment(),View.OnClickListener {
                         val duration = Toast.LENGTH_SHORT
                         val toast = Toast.makeText(this.context, "Error!", duration)
                         toast.show()
+                        Log.d("server error: ", it.toString())
                     })
                 {
                     override fun getHeaders(): MutableMap<String, String> {
